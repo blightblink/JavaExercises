@@ -1,8 +1,8 @@
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
-import org.mockito.Mockito;
+
 
 import java.util.Random;
 
@@ -19,20 +19,20 @@ public class MainTest {
     @Mock
     mockRandom mockRandom;
 
-    @Before
+    @BeforeEach
     public void before(){
     }
 
 
     @Test
     public void myFirstTestTest(){
-        Assert.assertNotNull(Main.eldrichBlast());
+        Assertions.assertNotNull(Main.eldrichBlast());
 
         int x = 0;
         for(int i = 0 ; i < 1000 ; i++){
             x = Main.eldrichBlast();
-            Assert.assertTrue("Wrong number !! you had a: " + x  ,x > 1);
-            Assert.assertTrue("Wrong number !! you had a: " + x  ,x < 21);
+            Assertions.assertTrue(x > 1,"Wrong number !! you had a: " + x  );
+            Assertions.assertTrue(x < 21, "Wrong number !! you had a: " + x  );
         }
     }
 }
